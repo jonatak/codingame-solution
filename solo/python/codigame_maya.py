@@ -11,7 +11,7 @@ def getNumber(number, symbol):
         n = symbol.index(elem)
         res += n * pow(20, index)
     return res
-    
+
 def getBaseTwenty(number):
     res = number
     li = []

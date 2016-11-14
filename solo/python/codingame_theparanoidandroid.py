@@ -1,6 +1,3 @@
-import sys
-import math
-
 nb_floors, width, nb_rounds, exit_floor, exit_pos, nb_total_clones, nb_additional_elevators, nb_elevators = [int(i) for i in raw_input().split()]
 
 elevators = {}
@@ -18,8 +15,8 @@ while 1:
     if clone_floor == -1 and clone_pos == -1 and direction == "NONE":
         print "WAIT"
     elif (direction == "LEFT" and elevators[clone_floor] <= clone_pos) \
-    or (direction == "RIGHT" and elevators[clone_floor] >= clone_pos) \
-    or marvins.get(clone_floor, -1) != -1:
+            or (direction == "RIGHT" and elevators[clone_floor] >= clone_pos) \
+            or marvins.get(clone_floor, -1) != -1:
         print "WAIT"
     else:
         print "BLOCK"
