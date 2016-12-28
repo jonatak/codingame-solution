@@ -5,14 +5,14 @@ def grouper(iterable, n, fillvalue=None):
     args = [iter(iterable)] * n
     return list(izip_longest(*args, fillvalue=fillvalue))
 
-def getNumber(number, symbol):
+def get_number(number, symbol):
     res = 0
     for index, elem in enumerate(reversed(number)):
         n = symbol.index(elem)
         res += n * pow(20, index)
     return res
 
-def getBaseTwenty(number):
+def get_base_twenty(number):
     res = number
     li = []
     while res:
@@ -34,11 +34,11 @@ number2 = list(grouper([raw_input() for i in xrange(s2)], h))
 
 operation = raw_input()
 
-n1 = getNumber(number1, symbol)
-n2 = getNumber(number2, symbol)
+n1 = get_number(number1, symbol)
+n2 = get_number(number2, symbol)
 
 res = eval(str(n1)+operation+str(n2))
 
-for number in reversed(getBaseTwenty(res)):
+for number in reversed(get_base_twenty(res)):
     for i in symbol[number]:
         print i
