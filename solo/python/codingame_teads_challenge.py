@@ -15,7 +15,7 @@ for i in xrange(n):
 
 treeGen = (k for k, v in tree.items() if len(v) == 1)
 
-def getNextNode(leaf):
+def get_next_node(leaf):
     res = set()
     for i in leaf:
         for e in tree[i]:
@@ -25,12 +25,12 @@ def getNextNode(leaf):
     return res
 
 first = set([treeGen.next()])
-leafs = getNextNode(first)
+leafs = get_next_node(first)
 acc = 0
 
 while (len(leafs)):
     acc += 1
-    leafs = getNextNode(leafs)
+    leafs = get_next_node(leafs)
 
 final = acc / 2 + acc % 2
 print final
